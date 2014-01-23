@@ -19,6 +19,9 @@ namespace modeling
      int Month(int);
      double Random();
      void CleanVariables();
+     double dWtot_mat[100][365];
+     double dWtb_mat[100][365];
+     double dWtbf_mat[100][365];
   };
 }
 

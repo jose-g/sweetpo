@@ -11,5 +11,6 @@ namespace modeling
      char* Month;
      char *location;
      void CleanVariables();
+     int repetitions;
   };
 }

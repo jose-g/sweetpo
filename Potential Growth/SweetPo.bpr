@@ -6,7 +6,8 @@
     <PROJECT value="SweetPo.exe"/>
     <OBJFILES value="SweetPo.obj USimulationTime.obj UCampo.obj UReportTXT.obj 
       UReportTXTMenu.obj UAbout.obj UClimate.obj UMain.obj UCropParameter.obj 
-      UDMProd.obj UPresentation.obj"/>
+      UDMProd.obj UPresentation.obj 
+      &quot;..\Clases\Potential Growth\ManageDataPotato.obj&quot; &quot;..\Clases\Potential Growth\Simulation.obj&quot;"/>
     <RESFILES value="SweetPo.res"/>
     <DEFFILE value=""/>
     <RESDEPEN value="$(RESFILES) USimulationTime.dfm UCampo.dfm UReportTXT.dfm 
@@ -22,27 +23,28 @@
       dbexpress.bpi dbxcds.bpi indy.bpi bcb2kaxserver.bpi TeeDB7C6.bpi 
       Tee7C6.bpi TeeUI7C6.bpi TeeLanguage7C6.bpi TeePro7C6.bpi TeeGL7C6.bpi 
       TeeQR7C6.bpi TeeImage7C6.bpi"/>
-    <PATHCPP value=".;"/>
+    <PATHCPP value=".;&quot;..\Clases\Potential Growth&quot;;&quot;..\Clases\Potential Growth&quot;"/>
     <PATHPAS value=".;"/>
     <PATHRC value=".;"/>
     <PATHASM value=".;"/>
     <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
     <RELEASELIBPATH value="$(BCB)\lib\release"/>
     <LINKER value="ilink32"/>
-    <USERDEFINES value=""/>
+    <USERDEFINES value="_DEBUG"/>
     <SYSDEFINES value="_RTLDLL;NO_STRICT"/>
     <MAINSOURCE value="SweetPo.cpp"/>
-    <INCLUDEPATH value="&quot;..\..\Potential Growth&quot;;&quot;D:\TrabajoCIP\ProjCamote\Potential Growth&quot;;&quot;D:\TrabajoCIP\ProjCamote\Clases\Potential Growth&quot;;&quot;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Include&quot;;$(BCB)\include;$(BCB)\include\vcl"/>
-    <LIBPATH value="&quot;..\..\Potential Growth&quot;;&quot;D:\TrabajoCIP\ProjCamote\Clases\Potential Growth&quot;;&quot;D:\TrabajoCIP\ProjCamote\Potential Growth&quot;;&quot;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib&quot;;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <INCLUDEPATH value="&quot;..\Clases\Potential Growth&quot;;&quot;D:\TrabajoCIP\ProjCamote\Potential Growth&quot;;&quot;C:\Program Files (x86)\Steema Software\TeeChart 705 for Builder 6\Builder6\Include&quot;;$(BCB)\include;$(BCB)\include\vcl"/>
+    <LIBPATH value="&quot;..\Clases\Potential Growth&quot;;&quot;D:\TrabajoCIP\ProjCamote\Potential Growth&quot;;&quot;C:\Program Files (x86)\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib&quot;;$(BCB)\lib\obj;$(BCB)\lib"/>
     <WARNINGS value="-w-par"/>
     <OTHERFILES value=""/>
   </MACROS>
   <OPTIONS>
-    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -a8 -b- -k- -vi -c -tW -tWM"/>
-    <PFLAGS value="-$Y- -$L- -$D- -$A8 -v -JPHNE -M"/>
+    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k -y -v -vi- -c 
+      -tW -tWM"/>
+    <PFLAGS value="-$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
     <RFLAGS value=""/>
-    <AFLAGS value="/mx /w2 /zn"/>
-    <LFLAGS value="-D&quot;&quot; -aa -Tpe -x -Gn"/>
+    <AFLAGS value="/mx /w2 /zi"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpe -x -Gn -v"/>
     <OTHERFILES value=""/>
   </OPTIONS>
   <LINKER>
@@ -64,6 +66,8 @@
       <FILE FILENAME="UCropParameter.cpp" FORMNAME="frmCropParameter" UNITNAME="UCropParameter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UDMProd.cpp" FORMNAME="frmDMProd" UNITNAME="UDMProd" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UPresentation.cpp" FORMNAME="frmPresentation" UNITNAME="UPresentation" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\Clases\Potential Growth\ManageDataPotato.cpp" FORMNAME="" UNITNAME="ManageDataPotato" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\Clases\Potential Growth\Simulation.cpp" FORMNAME="" UNITNAME="Simulation" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>
@@ -97,19 +101,23 @@ ProductVersion=1.0.0.0
 Comments=
 
 [HistoryLists\hlIncludePath]
-Count=5
-Item0=..\..\Potential Growth;D:\TrabajoCIP\ProjCamote\Potential Growth;D:\TrabajoCIP\ProjCamote\Clases\Potential Growth;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Include;$(BCB)\include;$(BCB)\include\vcl
-Item1=D:\TrabajoCIP\ProjCamote\Potential Growth;D:\TrabajoCIP\ProjCamote\Clases\Potential Growth;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Include;$(BCB)\include;$(BCB)\include\vcl
-Item2=D:\TrabajoCIP\ProjPotato\Potential Growth;D:\TrabajoCIP\ProjPotato\Clases\Potential Growth;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Include;$(BCB)\include;$(BCB)\include\vcl
-Item3=D:\TrabajoCIP\ProjPotato\Potential Growth;D:\TrabajoCIP\ProjPotato\Clases\Potential Growth;$(BCB)\include;$(BCB)\include\vcl
-Item4=C:\Program Files\Borland\CBuilder6\Projects;D:\TrabajoCIP\ProjPotato\Potential Growth;$(BCB)\include;$(BCB)\include\vcl
+Count=7
+Item0=..\Clases\Potential Growth;D:\TrabajoCIP\ProjCamote\Potential Growth;D:\TrabajoCIP\ProjCamote\Clases\Potential Growth;C:\Program Files (x86)\Steema Software\TeeChart 705 for Builder 6\Builder6\Include;$(BCB)\include;$(BCB)\include\vcl
+Item1=D:\TrabajoCIP\ProjCamote\Potential Growth;D:\TrabajoCIP\ProjCamote\Clases\Potential Growth;C:\Program Files (x86)\Steema Software\TeeChart 705 for Builder 6\Builder6\Include;$(BCB)\include;$(BCB)\include\vcl
+Item2=..\..\Potential Growth;D:\TrabajoCIP\ProjCamote\Potential Growth;D:\TrabajoCIP\ProjCamote\Clases\Potential Growth;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Include;$(BCB)\include;$(BCB)\include\vcl
+Item3=D:\TrabajoCIP\ProjCamote\Potential Growth;D:\TrabajoCIP\ProjCamote\Clases\Potential Growth;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Include;$(BCB)\include;$(BCB)\include\vcl
+Item4=D:\TrabajoCIP\ProjPotato\Potential Growth;D:\TrabajoCIP\ProjPotato\Clases\Potential Growth;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Include;$(BCB)\include;$(BCB)\include\vcl
+Item5=D:\TrabajoCIP\ProjPotato\Potential Growth;D:\TrabajoCIP\ProjPotato\Clases\Potential Growth;$(BCB)\include;$(BCB)\include\vcl
+Item6=C:\Program Files\Borland\CBuilder6\Projects;D:\TrabajoCIP\ProjPotato\Potential Growth;$(BCB)\include;$(BCB)\include\vcl
 
 [HistoryLists\hlLibraryPath]
-Count=4
-Item0=..\..\Potential Growth;D:\TrabajoCIP\ProjCamote\Clases\Potential Growth;D:\TrabajoCIP\ProjCamote\Potential Growth;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;$(BCB)\lib\obj;$(BCB)\lib
-Item1=D:\TrabajoCIP\ProjCamote\Clases\Potential Growth;D:\TrabajoCIP\ProjCamote\Potential Growth;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;$(BCB)\lib\obj;$(BCB)\lib
-Item2=D:\TrabajoCIP\ProjPotato\Clases\Potential Growth;D:\TrabajoCIP\ProjPotato\Potential Growth;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;$(BCB)\lib\obj;$(BCB)\lib
-Item3=C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;C:\Program Files\Borland\CBuilder6\Projects;D:\TrabajoCIP\ProjPotato\Potential Growth;..\..\..\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Count=6
+Item0=..\Clases\Potential Growth;D:\TrabajoCIP\ProjCamote\Clases\Potential Growth;D:\TrabajoCIP\ProjCamote\Potential Growth;C:\Program Files (x86)\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item1=D:\TrabajoCIP\ProjCamote\Clases\Potential Growth;D:\TrabajoCIP\ProjCamote\Potential Growth;C:\Program Files (x86)\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item2=..\..\Potential Growth;D:\TrabajoCIP\ProjCamote\Clases\Potential Growth;D:\TrabajoCIP\ProjCamote\Potential Growth;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item3=D:\TrabajoCIP\ProjCamote\Clases\Potential Growth;D:\TrabajoCIP\ProjCamote\Potential Growth;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item4=D:\TrabajoCIP\ProjPotato\Clases\Potential Growth;D:\TrabajoCIP\ProjPotato\Potential Growth;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item5=C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;C:\Program Files\Borland\CBuilder6\Projects;D:\TrabajoCIP\ProjPotato\Potential Growth;..\..\..\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;$(BCB)\lib\obj;$(BCB)\lib
 
 [HistoryLists\hlDebugSourcePath]
 Count=1

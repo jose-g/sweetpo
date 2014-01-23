@@ -64,6 +64,7 @@ void ManageDataPotato::DefaultCondition()
   time->MonthStart  = 5;
   time->duration    = 130;
   strcpy(time->location,"Africa");
+  time->repetitions    = 20;
 
   char clima[255];
   strcpy(clima,workdir);
@@ -118,6 +119,7 @@ bool ManageDataPotato::SaveCondition(char* pnombre)
   fprintf(stream,"%f %f\n",float(crop->tuber->M),float(crop->tuber->A));
   fprintf(stream,"%f %f\n",float(crop->tuber->b),float(crop->tuber->DMCont));
   fprintf(stream,"%i %i %i\n",time->DayStart,time->MonthStart,time->duration);
+  fprintf(stream,"%i\n",time->repetitions);
   fclose(stream);
   return true; // se abrio correctamente el archivo y se guardo los datos
 }
@@ -169,6 +171,7 @@ bool ManageDataPotato::LoadCondition(char* pnombre)
   crop->tuber->b=strtod(data1,NULL);
   crop->tuber->DMCont=strtod(data2,NULL);
   fscanf(stream,"%i %i %i\n",&time->DayStart,&time->MonthStart,&time->duration);
+  fscanf(stream,"%i\n",&time->repetitions);
   fclose(stream);
   return true; // se abrio correctamente el archivo y se levanto los datos
 }

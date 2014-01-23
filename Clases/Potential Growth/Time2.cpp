@@ -30,5 +30,6 @@ void Time::CleanVariables()
   duration   = 0;
   strcpy(location,"");
   strcpy(Month,"");
+  repetitions = 20;
 }
 #endif

@@ -1,1 +1,30 @@
-first commit
+Jueves 23/enero/2014  second commit
+version 1.0.1
+Se implemento la posibilidad de tener varias corridas por cada escenario, el rango es de 20-100 corridas.  El usuario puede definir el número de corridas por escenario en el formulario frmSimulationTime.  Las corridas se promedian y se guardan en un archivo texto, estos promedios se usan para alimentar todos los reportes texto o gráficos del software.
+
+Cambios:
+
+* simulation.cpp : Se implemento las repeticiones por escenario, las repeticiones se promedian y se guardan en dos archivos texto.
+
+* USimuationTime.cpp : Se agrego casilla "Number of runs (20-100)" en el formulario frmSimulationTime.
+
+* Time2.h : se declaro variable pública repetitions en la clase Time
+
+* Time2.cpp : Se definio el valor mínimo de 20 a la variable repetitions.
+
+* ManageDataPotato.cpp :
+
+     - Se definio por defecto el valor de 20 a la  variable repetitions de la clase Time en el metodo DefaultCondition
+
+     - Se implemento en el método SaveCondition la posibilidad de guardar en un archivo la variable repetitions de la clase Time.
+
+     - Se implemento en el método LoadCondition la posibilidad de cargar desde un archivo el valor correspondiene a la variable repetition de la clase Time
+
+* USimulationTime.cpp :
+
+     - Se modifico el método PutValuesOnForm con la finalidad de que se muestre el valor de la variable repetions de la clase Time en el formulario frmSimulationTime.
+
+     - Se modifico el método SaveData con la finalidad de capturar el valor ingresado por el usuario en la casilla "Number of runs (20-100)" y asignar el valor a la variable repetitions de la clase Time.
+
+Miercoles 22/enero/2014  first commit
+version 1.0

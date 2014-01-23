@@ -1,29 +1,30 @@
 object frmPresentation: TfrmPresentation
-  Left = 309
-  Top = 215
-  Width = 430
-  Height = 492
+  Left = 491
+  Top = 301
+  Width = 437
+  Height = 527
   BorderIcons = [biHelp]
-  Caption = 'SweetPo v1.0'
+  Caption = 'SweetPo v1.0.1'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -14
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
-  TextHeight = 13
+  PixelsPerInch = 120
+  TextHeight = 16
   object GroupBox2: TGroupBox
-    Left = 8
-    Top = 8
-    Width = 401
-    Height = 449
+    Left = 0
+    Top = 0
+    Width = 419
+    Height = 482
+    Align = alClient
     TabOrder = 0
     object Label1: TLabel
-      Left = 128
-      Top = 24
+      Left = 134
+      Top = 310
       Width = 222
       Height = 16
       Caption = 'International Potato Center (CIP)'
@@ -35,8 +36,8 @@ object frmPresentation: TfrmPresentation
       ParentFont = False
     end
     object Label2: TLabel
-      Left = 8
-      Top = 416
+      Left = 26
+      Top = 440
       Width = 63
       Height = 16
       Caption = 'Lima, Per'#250
@@ -48,14 +49,14 @@ object frmPresentation: TfrmPresentation
       ParentFont = False
     end
     object GroupBox1: TGroupBox
-      Left = 16
-      Top = 128
-      Width = 369
-      Height = 265
+      Left = 20
+      Top = 22
+      Width = 373
+      Height = 275
       TabOrder = 0
       object Image1: TImage
-        Left = 18
-        Top = 16
+        Left = 22
+        Top = 20
         Width = 333
         Height = 232
         AutoSize = True
@@ -1178,14 +1179,14 @@ object frmPresentation: TfrmPresentation
       end
     end
     object Button1: TButton
-      Left = 208
-      Top = 408
-      Width = 177
-      Height = 25
+      Left = 168
+      Top = 430
+      Width = 218
+      Height = 31
       Caption = 'START'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -13
+      Font.Height = -17
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
@@ -1193,15 +1194,16 @@ object frmPresentation: TfrmPresentation
       OnClick = Button1Click
     end
     object Panel1: TPanel
-      Left = 16
-      Top = 17
+      Left = 20
+      Top = 310
       Width = 104
       Height = 104
+      AutoSize = True
       BevelInner = bvLowered
       BevelOuter = bvLowered
       TabOrder = 2
       object Image3: TImage
-        Left = 1
+        Left = 2
         Top = 2
         Width = 100
         Height = 100

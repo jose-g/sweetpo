@@ -26,6 +26,8 @@ __published:	// IDE-managed Components
         TEdit *edDay;
         TEdit *Edit4;
         TEdit *edLocation;
+        TEdit *Edit8;
+        TEdit *edNumSim;
         void __fastcall cmdSimulateClick(TObject *Sender);
         void __fastcall FormShow(TObject *Sender);
 private:	// User declarations

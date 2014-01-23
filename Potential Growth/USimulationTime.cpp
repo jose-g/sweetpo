@@ -34,6 +34,7 @@ void TfrmSimulationTime::PutValuesOnForm()
   edDay->Text=cond->DayStart;
   edTime->Text=cond->duration;
   edLocation->Text=cond->location;
+  edNumSim->Text=cond->repetitions;
 }
 //---------------------------------------------------------------------------
 void __fastcall TfrmSimulationTime::FormShow(TObject *Sender)
@@ -101,6 +102,7 @@ void TfrmSimulationTime::SaveData()
   char* cp2 = new char[ cbMonth->Text.Length() + 1 ];
   strcpy( cp2, cbMonth->Text.c_str() );
   cond->Month=cp2;
+  cond->repetitions   = edNumSim->Text.ToInt();
 }
 //---------------------------------------------------------------------------
 

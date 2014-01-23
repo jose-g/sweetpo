@@ -3,60 +3,60 @@ object frmAbout: TfrmAbout
   Top = 208
   BorderStyle = bsDialog
   Caption = 'About model'
-  ClientHeight = 475
-  ClientWidth = 407
+  ClientHeight = 585
+  ClientWidth = 501
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -14
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
-  TextHeight = 13
+  PixelsPerInch = 120
+  TextHeight = 16
   object Label14: TLabel
-    Left = 16
-    Top = 304
-    Width = 57
-    Height = 13
+    Left = 20
+    Top = 374
+    Width = 68
+    Height = 16
     Caption = 'Contact us :'
   end
   object Label15: TLabel
-    Left = 16
-    Top = 320
-    Width = 228
-    Height = 13
+    Left = 20
+    Top = 394
+    Width = 288
+    Height = 16
     Caption = 'Production Systems and The Environment Team'
   end
   object Label16: TLabel
-    Left = 16
-    Top = 336
-    Width = 124
-    Height = 13
+    Left = 20
+    Top = 414
+    Width = 152
+    Height = 16
     Caption = 'R.QUIROZ@CGIAR.ORG'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clNavy
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsUnderline]
     ParentFont = False
   end
   object GroupBox2: TGroupBox
-    Left = 314
-    Top = 392
-    Width = 78
-    Height = 75
+    Left = 386
+    Top = 482
+    Width = 96
+    Height = 93
     Caption = 'GroupBox2'
     TabOrder = 0
     object SpeedButton4: TSpeedButton
-      Left = 22
-      Top = 30
-      Width = 35
-      Height = 35
+      Left = 27
+      Top = 37
+      Width = 43
+      Height = 43
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clRed
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Glyph.Data = {
@@ -77,10 +77,10 @@ object frmAbout: TfrmAbout
       OnClick = SpeedButton4Click
     end
     object RichEdit2: TRichEdit
-      Left = 12
-      Top = 5
-      Width = 57
-      Height = 22
+      Left = 15
+      Top = 6
+      Width = 70
+      Height = 27
       TabStop = False
       Alignment = taCenter
       BiDiMode = bdLeftToRight
@@ -88,7 +88,7 @@ object frmAbout: TfrmAbout
       Color = clBlack
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clMaroon
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentBiDiMode = False
@@ -97,17 +97,17 @@ object frmAbout: TfrmAbout
       TabOrder = 1
     end
     object RichEdit1: TRichEdit
-      Left = 8
+      Left = 10
       Top = 0
-      Width = 57
-      Height = 22
+      Width = 70
+      Height = 27
       TabStop = False
       Alignment = taCenter
       BiDiMode = bdLeftToRight
       Color = 12713983
       Font.Charset = DEFAULT_CHARSET
       Font.Color = 6369292
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       Lines.Strings = (
@@ -119,142 +119,142 @@ object frmAbout: TfrmAbout
     end
   end
   object GroupBox1: TGroupBox
-    Left = 8
-    Top = 8
-    Width = 393
-    Height = 289
+    Left = 10
+    Top = 10
+    Width = 484
+    Height = 356
     TabOrder = 1
     object Label1: TLabel
-      Left = 127
-      Top = 16
-      Width = 140
-      Height = 22
-      Caption = 'SWEETPO v1.0'
+      Left = 156
+      Top = 20
+      Width = 184
+      Height = 27
+      Caption = 'SWEETPO v1.0.1'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = 6369292
-      Font.Height = -19
+      Font.Height = -23
       Font.Name = 'Arial'
       Font.Style = [fsBold]
       ParentFont = False
     end
     object Label2: TLabel
-      Left = 70
-      Top = 40
-      Width = 283
-      Height = 22
+      Left = 86
+      Top = 49
+      Width = 342
+      Height = 27
       Caption = 'A production simulation model'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
-      Font.Height = -19
+      Font.Height = -23
       Font.Name = 'Arial'
       Font.Style = [fsBold]
       ParentFont = False
     end
     object Label3: TLabel
-      Left = 25
-      Top = 80
-      Width = 343
-      Height = 13
+      Left = 31
+      Top = 98
+      Width = 432
+      Height = 16
       Caption = 
         'The design, structure and development of this computer simulatio' +
         'n model'
     end
     object Label4: TLabel
-      Left = 22
-      Top = 95
-      Width = 350
-      Height = 13
+      Left = 27
+      Top = 117
+      Width = 437
+      Height = 16
       Caption = 
         'was done by the team of Production Systems and The Environment (' +
         'PSE);'
     end
     object Label5: TLabel
-      Left = 30
-      Top = 184
-      Width = 142
-      Height = 13
+      Left = 37
+      Top = 226
+      Width = 175
+      Height = 16
       Caption = 'Ph. D. Roberto Quiroz Guerra '
     end
     object Label7: TLabel
-      Left = 30
-      Top = 209
-      Width = 94
-      Height = 13
+      Left = 37
+      Top = 257
+      Width = 117
+      Height = 16
       Caption = 'M.Sc. Carla Gavilan'
     end
     object Label8: TLabel
-      Left = 30
-      Top = 232
-      Width = 131
-      Height = 13
+      Left = 37
+      Top = 286
+      Width = 168
+      Height = 16
       Caption = 'Eng. Jos'#233' Guerrero Romero'
     end
     object Label12: TLabel
-      Left = 222
-      Top = 184
-      Width = 87
-      Height = 13
+      Left = 273
+      Top = 226
+      Width = 112
+      Height = 16
       Caption = 'PSE Team Leader'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
     end
     object Label13: TLabel
-      Left = 222
-      Top = 232
-      Width = 140
-      Height = 13
+      Left = 273
+      Top = 286
+      Width = 176
+      Height = 16
       Caption = 'Engineer in computer science'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
     end
     object Label17: TLabel
-      Left = 222
-      Top = 209
-      Width = 52
-      Height = 13
+      Left = 273
+      Top = 257
+      Width = 68
+      Height = 16
       Caption = 'Agronomist'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
     end
     object Label22: TLabel
-      Left = 16
-      Top = 152
-      Width = 96
-      Height = 13
+      Left = 20
+      Top = 187
+      Width = 120
+      Height = 16
       Caption = 'PSE Subprogram'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
     end
     object Label27: TLabel
-      Left = 20
-      Top = 110
-      Width = 353
-      Height = 13
+      Left = 25
+      Top = 135
+      Width = 450
+      Height = 16
       Caption = 
         'a Subprogram of Global Program of Integrated Crop and Systems Re' +
         'search'
     end
     object Panel1: TPanel
-      Left = 8
-      Top = 16
-      Width = 36
-      Height = 36
+      Left = 10
+      Top = 20
+      Width = 44
+      Height = 44
       BevelInner = bvLowered
       BevelOuter = bvLowered
       Caption = 'Panel1'
@@ -262,8 +262,8 @@ object frmAbout: TfrmAbout
       object Image1: TImage
         Left = 2
         Top = 2
-        Width = 32
-        Height = 32
+        Width = 40
+        Height = 40
         AutoSize = True
         Picture.Data = {
           055449636F6E0000010001002020000001001800A80C00001600000028000000
@@ -373,10 +373,10 @@ object frmAbout: TfrmAbout
     end
   end
   object Panel2: TPanel
-    Left = 16
-    Top = 360
-    Width = 104
-    Height = 104
+    Left = 20
+    Top = 443
+    Width = 128
+    Height = 128
     BevelInner = bvLowered
     BevelOuter = bvLowered
     TabOrder = 2

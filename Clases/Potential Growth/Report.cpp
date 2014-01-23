@@ -1,5 +1,6 @@
 #ifndef ReportH
 #define ReportH
+#include <SysUtils.hpp>
 #include "Report.h"
 using namespace modeling;
 Report::Report()

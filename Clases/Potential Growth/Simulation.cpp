@@ -11,9 +11,8 @@ Simulation::~Simulation()
 }
 bool Simulation::simulate()
 {
-// inicialización de variables auxiliares
-  bool finished=false;
-  int i=0;
+  bool finished;
+
 // inicialización de variables independientes
   double N      = crop->plant->N;
   double fcl    = crop->plant->fcl;
@@ -33,7 +32,7 @@ bool Simulation::simulate()
   double MaxTemp[366];
   double Precipit[366];
   double Radiation[366];
-  for(i=1;i<=365;i++)
+  for(int i=1;i<=365;i++)
   {
     MinTemp[i]   = climate->MinTemp[i-1];
     MaxTemp[i]   = climate->MaxTemp[i-1];
@@ -43,6 +42,13 @@ bool Simulation::simulate()
   int totaldays=time->duration;
   int mm=time->MonthStart;
   int dd=time->DayStart;
+  int numrep=time->repetitions;
+
+// inicio de repeticiones
+  for(int irep=0;irep<numrep;irep++)
+  {
+// inicialización de variables auxiliares
+  finished=false;
 // inicialización de variables dependientes
   double Flinti=0.0;
   double Flint2=0.0;
@@ -69,13 +75,6 @@ bool Simulation::simulate()
 // inicialización de variables contenedoras
   double t_ac=0.001;
   double dWtot=0.0;
-// Se abre reportes
-  FILE *stream1=NULL;
-  FILE *stream2=NULL;
-  stream1=fopen(report->Archivo1,"w");
-  rewind(stream1);
-  stream2=fopen(report->Archivo2,"w");
-  rewind(stream2);
 // modelo matemático
   switch (mm)
   {
@@ -120,8 +119,7 @@ bool Simulation::simulate()
   }
   day=SDate-1;
 
-  fprintf(stream1,"%f\n",float(DMCont));
-  for(i=1;i<=totaldays;i++)
+  for(int i=1;i<=totaldays;i++)
   {
     SDay=i;
     if(day==365){day=1;}
@@ -130,7 +128,7 @@ bool Simulation::simulate()
 //    Flint2 = 0.5-(t_ac-t50)/d;
     HI = M/(1.0+pow(t_ac/A,b));
     dWtb = dWtot*HI;
-    dWtbf = dWtb/DMCont; 
+    dWtbf = dWtb/DMCont;
     if(SDay>=EDay){DAE=SDay-EDay;}else{DAE=0;}
     rdm=Random();
     Flint1 = rdm*v*Flinti+Flinti;
@@ -212,20 +210,58 @@ bool Simulation::simulate()
 //    t_ac=t_ac+t;
     t_ac=t_ac+Te;
     dWtot=dWtot+dW;
+
+    dWtot_mat[irep][i]=dWtot;
+    dWtb_mat[irep][i]=dWtb;
+    dWtbf_mat[irep][i]=dWtbf;
+
+  }
+  finished=true;
+  } // fin de irep
+
+// Se abre reportes
+  FILE *stream1=NULL;
+  FILE *stream2=NULL;
+  stream1=fopen(report->Archivo1,"w");
+  rewind(stream1);
+  stream2=fopen(report->Archivo2,"w");
+  rewind(stream2);
+
+  fprintf(stream1,"%f\n",float(DMCont));
+// aqui me quede
+  double XdWtot=0.0;
+  double XdWtb=0.0;
+  double XdWtbf=0.0;
+
+  for(int i=1;i<=totaldays;i++)
+  {
+    for(int irep=0;irep<numrep;irep++)
+    {
+        XdWtot=XdWtot+dWtot_mat[irep][i];
+        XdWtb=XdWtb+dWtb_mat[irep][i];
+        XdWtbf=XdWtbf+dWtbf_mat[irep][i];
+    }
+    XdWtot=XdWtot/numrep;
+    XdWtb=XdWtb/numrep;
+    XdWtbf=XdWtbf/numrep;
+
+
     if(i==totaldays)
     {
-      fprintf(stream1,"%f %f",float(dWtot),float(dWtb));
-      fprintf(stream2,"%f",float(dWtbf));
+      fprintf(stream1,"%f %f",float(XdWtot),float(XdWtb));
+      fprintf(stream2,"%f",float(XdWtbf));
     }
     else
     {
-      fprintf(stream1,"%f %f\n",float(dWtot),float(dWtb));
-      fprintf(stream2,"%f\n",float(dWtbf));
+      fprintf(stream1,"%f %f\n",float(XdWtot),float(XdWtb));
+      fprintf(stream2,"%f\n",float(XdWtbf));
     }
   }
+
+// cerramos reportes
   fclose(stream1);
   fclose(stream2);
-  finished=true;
+// se contabiliza un nuevo escenario
   NumberScenario++;
   return finished;
 }
