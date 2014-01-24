@@ -1,6 +1,6 @@
 object frmMain: TfrmMain
-  Left = 321
-  Top = 205
+  Left = 371
+  Top = 230
   Width = 1254
   Height = 907
   Caption = 'SWEETPO : A sweetpotato production simulation model'
@@ -18276,6 +18276,10 @@ object frmMain: TfrmMain
         object Drymatterproductionresume1: TMenuItem
           Caption = 'Dry matter production resume'
           OnClick = Drymatterproductionresume1Click
+        end
+        object Resultofruns1: TMenuItem
+          Caption = 'Result of runs'
+          OnClick = Resultofruns1Click
         end
       end
       object Graphreport1: TMenuItem

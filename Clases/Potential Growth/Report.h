@@ -11,8 +11,10 @@ namespace modeling
      ~Report();
      char* Archivo1;
      char* Archivo2;
+     char* Archivo3;
      char* DMProd;
      char* DMProdResume;
+     char* RunsReport;
      Time* time;
      char* variety;
      int scenario;
@@ -21,6 +23,8 @@ namespace modeling
      void GenerateTextReport();
      void GenerateDMProd();
      void GenerateDMProdResume();
+     void GenerateRunsReport();
+
   };
 }
 

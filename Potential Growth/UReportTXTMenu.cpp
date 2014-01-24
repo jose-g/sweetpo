@@ -59,3 +59,21 @@ void __fastcall TfrmReportTXTMenu::Button2Click(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
+void __fastcall TfrmReportTXTMenu::butResultOfRunsClick(TObject *Sender)
+{
+  int existe=access(cond->RunsReport, 0);
+  if(existe==-1) // el archivo no existe
+  {
+    Application->MessageBox("There is not information to show!!!","¡Advertencia!",MB_OK);
+    return;
+  }
+  else
+  {
+    TfrmReportTXT *frm = new TfrmReportTXT(this);
+    frm->EnterInformation(cond->RunsReport,"Text report : Result of runs");
+    frm->ShowModal();
+    delete frm;
+  }
+}
+//---------------------------------------------------------------------------
+

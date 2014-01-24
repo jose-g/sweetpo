@@ -211,9 +211,9 @@ bool Simulation::simulate()
     t_ac=t_ac+Te;
     dWtot=dWtot+dW;
 
-    dWtot_mat[irep][i]=dWtot;
-    dWtb_mat[irep][i]=dWtb;
-    dWtbf_mat[irep][i]=dWtbf;
+    dWtot_mat[irep][i-1]=dWtot;
+    dWtb_mat[irep][i-1]=dWtb;
+    dWtbf_mat[irep][i-1]=dWtbf;
 
   }
   finished=true;
@@ -222,10 +222,13 @@ bool Simulation::simulate()
 // Se abre reportes
   FILE *stream1=NULL;
   FILE *stream2=NULL;
+  FILE *stream3=NULL;
   stream1=fopen(report->Archivo1,"w");
   rewind(stream1);
   stream2=fopen(report->Archivo2,"w");
   rewind(stream2);
+  stream3=fopen(report->Archivo3,"w");
+  rewind(stream3);
 
   fprintf(stream1,"%f\n",float(DMCont));
 // aqui me quede
@@ -233,7 +236,7 @@ bool Simulation::simulate()
   double XdWtb=0.0;
   double XdWtbf=0.0;
 
-  for(int i=1;i<=totaldays;i++)
+  for(int i=0;i<totaldays;i++)
   {
     for(int irep=0;irep<numrep;irep++)
     {
@@ -257,10 +260,14 @@ bool Simulation::simulate()
       fprintf(stream2,"%f\n",float(XdWtbf));
     }
   }
-
+  for(int irep=0;irep<numrep;irep++)
+  {
+    fprintf(stream3,"%f %f %f\n",float(dWtot_mat[irep][totaldays-1]),float(dWtb_mat[irep][totaldays-1]),float(dWtbf_mat[irep][totaldays-1]));
+  }
 // cerramos reportes
   fclose(stream1);
   fclose(stream2);
+  fclose(stream3);
 // se contabiliza un nuevo escenario
   NumberScenario++;
   return finished;

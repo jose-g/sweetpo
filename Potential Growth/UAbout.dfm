@@ -129,7 +129,7 @@ object frmAbout: TfrmAbout
       Top = 20
       Width = 184
       Height = 27
-      Caption = 'SWEETPO v1.0.1'
+      Caption = 'SWEETPO v1.0.2'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = 6369292
       Font.Height = -23

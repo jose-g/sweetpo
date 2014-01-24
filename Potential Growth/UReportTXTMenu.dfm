@@ -3,34 +3,34 @@ object frmReportTXTMenu: TfrmReportTXTMenu
   Top = 216
   BorderStyle = bsDialog
   Caption = 'Reports menu'
-  ClientHeight = 266
-  ClientWidth = 265
+  ClientHeight = 377
+  ClientWidth = 326
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -14
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
-  TextHeight = 13
+  PixelsPerInch = 120
+  TextHeight = 16
   object GroupBox2: TGroupBox
-    Left = 177
-    Top = 184
-    Width = 78
-    Height = 75
+    Left = 218
+    Top = 274
+    Width = 96
+    Height = 93
     Caption = 'GroupBox2'
     TabOrder = 0
     TabStop = True
     object SpeedButton4: TSpeedButton
-      Left = 22
-      Top = 30
-      Width = 35
-      Height = 35
+      Left = 27
+      Top = 37
+      Width = 43
+      Height = 43
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clRed
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Glyph.Data = {
@@ -51,10 +51,10 @@ object frmReportTXTMenu: TfrmReportTXTMenu
       OnClick = SpeedButton4Click
     end
     object RichEdit2: TRichEdit
-      Left = 12
-      Top = 5
-      Width = 57
-      Height = 22
+      Left = 15
+      Top = 6
+      Width = 70
+      Height = 27
       TabStop = False
       Alignment = taCenter
       BiDiMode = bdLeftToRight
@@ -62,7 +62,7 @@ object frmReportTXTMenu: TfrmReportTXTMenu
       Color = clBlack
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clMaroon
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentBiDiMode = False
@@ -71,17 +71,17 @@ object frmReportTXTMenu: TfrmReportTXTMenu
       TabOrder = 1
     end
     object RichEdit1: TRichEdit
-      Left = 8
+      Left = 10
       Top = 0
-      Width = 57
-      Height = 22
+      Width = 70
+      Height = 27
       TabStop = False
       Alignment = taCenter
       BiDiMode = bdLeftToRight
       Color = 12713983
       Font.Charset = DEFAULT_CHARSET
       Font.Color = 6369292
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       Lines.Strings = (
@@ -93,17 +93,17 @@ object frmReportTXTMenu: TfrmReportTXTMenu
     end
   end
   object GroupBox1: TGroupBox
-    Left = 9
-    Top = 8
-    Width = 248
-    Height = 169
+    Left = 11
+    Top = 10
+    Width = 305
+    Height = 255
     TabOrder = 1
     TabStop = True
     object RichEdit3: TRichEdit
-      Left = 69
-      Top = 5
-      Width = 113
-      Height = 22
+      Left = 85
+      Top = 6
+      Width = 139
+      Height = 27
       TabStop = False
       Alignment = taCenter
       BiDiMode = bdLeftToRight
@@ -111,7 +111,7 @@ object frmReportTXTMenu: TfrmReportTXTMenu
       Color = clBlack
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clMaroon
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentBiDiMode = False
@@ -120,17 +120,17 @@ object frmReportTXTMenu: TfrmReportTXTMenu
       TabOrder = 1
     end
     object RichEdit4: TRichEdit
-      Left = 65
+      Left = 80
       Top = 0
-      Width = 113
-      Height = 22
+      Width = 139
+      Height = 27
       TabStop = False
       Alignment = taCenter
       BiDiMode = bdLeftToRight
       Color = 12713983
       Font.Charset = DEFAULT_CHARSET
       Font.Color = 6369292
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       Lines.Strings = (
@@ -141,22 +141,31 @@ object frmReportTXTMenu: TfrmReportTXTMenu
       TabOrder = 0
     end
     object Button1: TButton
-      Left = 23
-      Top = 52
-      Width = 201
-      Height = 33
+      Left = 28
+      Top = 64
+      Width = 248
+      Height = 41
       Caption = 'Dry matter production'
       TabOrder = 2
       OnClick = Button1Click
     end
     object Button2: TButton
-      Left = 23
-      Top = 100
-      Width = 201
-      Height = 33
+      Left = 28
+      Top = 123
+      Width = 248
+      Height = 41
       Caption = 'Dry matter production resume'
       TabOrder = 3
       OnClick = Button2Click
+    end
+    object butResultOfRuns: TButton
+      Left = 28
+      Top = 187
+      Width = 248
+      Height = 41
+      Caption = 'Result of runs'
+      TabOrder = 4
+      OnClick = butResultOfRunsClick
     end
   end
 end

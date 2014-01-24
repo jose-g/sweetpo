@@ -60,6 +60,7 @@ __published:	// IDE-managed Components
         TImage *Image1;
         TMenuItem *Drymatterproduction2;
         TMenuItem *Drymatterproductionresume1;
+        TMenuItem *Resultofruns1;
         void __fastcall Exit1Click(TObject *Sender);
         void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
         void __fastcall SpeedButton9Click(TObject *Sender);
@@ -78,12 +79,13 @@ __published:	// IDE-managed Components
         void __fastcall SpeedButton6Click(TObject *Sender);
         void __fastcall Aboutmodel1Click(TObject *Sender);
         void __fastcall FormCreate(TObject *Sender);
+        void __fastcall Resultofruns1Click(TObject *Sender);
 private:	// User declarations
         AnsiString ArchivoDato;
         ManageDataPotato *cond;
         void ModificarStatusBar(AnsiString);
         void SelectReports();
-        AnsiString archivo1,archivo2,DMProd,DMProdResume;
+        AnsiString archivo1,archivo2,archivo3,DMProd,DMProdResume,RunsReport;
         AnsiString WorkDir;
 public:		// User declarations
         __fastcall TfrmMain(TComponent* Owner);

@@ -168,12 +168,16 @@ void TfrmMain::SelectReports()
 {
   archivo1=ExtractFileDir(Application->ExeName)+"\\archivo1.txt";
   archivo2=ExtractFileDir(Application->ExeName)+"\\archivo2.txt";
+  archivo3=ExtractFileDir(Application->ExeName)+"\\archivo3.txt";
   DMProd=ExtractFileDir(Application->ExeName)+"\\DMProd.txt";
   DMProdResume=ExtractFileDir(Application->ExeName)+"\\DMProdResume.txt";
+  RunsReport=ExtractFileDir(Application->ExeName)+"\\RunsReport.txt";
   cond->report->Archivo1=archivo1.c_str();
   cond->report->Archivo2=archivo2.c_str();
+  cond->report->Archivo3=archivo3.c_str();
   cond->report->DMProd=DMProd.c_str();
   cond->report->DMProdResume=DMProdResume.c_str();
+  cond->report->RunsReport=RunsReport.c_str();
 }
 //---------------------------------------------------------------------------
 void __fastcall TfrmMain::Drymatterproduction1Click(TObject *Sender)
@@ -254,6 +258,24 @@ void __fastcall TfrmMain::FormCreate(TObject *Sender)
     TfrmPresentation *frm = new TfrmPresentation(this);
     frm->ShowModal();
     delete frm;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfrmMain::Resultofruns1Click(TObject *Sender)
+{
+  int existe=access(cond->report->RunsReport, 0);
+  if(existe==-1) // el archivo no existe
+  {
+    Application->MessageBox("There is not information to show!!!","Warning!",MB_OK);
+    return;
+  }
+  else
+  {
+    TfrmReportTXT *frm = new TfrmReportTXT(this);
+    frm->EnterInformation(cond->report->RunsReport,"Text report : Result of runs");
+    frm->ShowModal();
+    delete frm;
+  }
 }
 //---------------------------------------------------------------------------
 

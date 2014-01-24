@@ -1,4 +1,51 @@
-Jueves 23/enero/2014  second commit
+Viernes 24/enero/2014  Tercer commit
+version 1.0.2
+Se implemento el reporte basado en texto de las repeticiones por cada escenario simulado, los datos corresponden a las variables Total Dry Matter, Tuber Dry Matter y Tuber Fresh Matter.
+
+Cambios:
+
+Simulation.cpp : Se guardo en un archivo texto los datos asignados en las variables dWtot, dWtb y dWtbf correspondiente al último dia de la simulación.
+
+* Report.h : 
+    -  se definio la variable char Archivo3 en la clase Report
+    -  se definio la variable char RunsReport en la clase Report
+    -  se declaro metodo GenerateRunsReport
+
+* Report.cpp :
+
+    -  se instancio el objeto Archivo3 en el metodo constructor Report()
+    -  Se elimino el objeto Archivo3 en el metodo destructor ~Report()
+    -  Se limpia el contenido del objeto char Archivo3 en el metodo CleanVariables
+    -  Se elimina el archivo fisicamente del disco duro referenciado en el objeto Archivo3
+
+    -  se instancio el objeto RunsReport en el metodo constructor Report()
+    -  Se elimino el objeto RunsReport en el metodo destructor ~Report()
+    -  Se limpia el contenido del objeto char RunsReport en el metodo CleanVariables
+    -  Se elimina el archivo fisicamente del disco duro referenciado en el objeto RunsReport
+
+    -  Se implemento el metodo GenerateRunsReport
+    -  se cambio el nombre de una variable local, dwtbf se cambio por dwtb ("Tuber dry matter")
+
+* UMain.h :
+
+    -  Se declaro la variable RunReport del tipo AnsiString
+    -  Se declaro la variable archivo3 del tipo AnsiString
+
+* UMain.cpp :
+
+    -  Se modifico el metodo SelectReports, se asigno la ruta de un archivo reporte a la variable archivo3.
+    -  Se modifico el metodo SelectReports, se asigno la variable local archivo3 al objeto archivo3 de la clase report
+    -  Se modifico el metodo SelectReports, se asigno la ruta de un archivo reporte a la variable RunsReport.
+    -  Se modifico el metodo SelectReports, se asigno la variable local RunsReport al objeto archivo3 de la clase report
+    -  Se agrego item "Result of runs" al menu Reports en el formulario frmMain
+    -  Se implemento metodo Resultofruns1Click
+
+* UReportTXTMenu.cpp :
+
+    -  Se agrego boton "Result of runs" en el formulario frmReportTXTMenu
+    -  se implemento el evento OnClick del boton butResultOfRuns
+
+Jueves 23/enero/2014  Segundo commit
 version 1.0.1
 Se implemento la posibilidad de tener varias corridas por cada escenario, el rango es de 20-100 corridas.  El usuario puede definir el número de corridas por escenario en el formulario frmSimulationTime.  Las corridas se promedian y se guardan en un archivo texto, estos promedios se usan para alimentar todos los reportes texto o gráficos del software.
 
@@ -26,5 +73,5 @@ Cambios:
 
      - Se modifico el método SaveData con la finalidad de capturar el valor ingresado por el usuario en la casilla "Number of runs (20-100)" y asignar el valor a la variable repetitions de la clase Time.
 
-Miercoles 22/enero/2014  first commit
+Miercoles 22/enero/2014  Primer commit
 version 1.0

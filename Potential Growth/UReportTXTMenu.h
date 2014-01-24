@@ -22,9 +22,11 @@ __published:	// IDE-managed Components
         TRichEdit *RichEdit4;
         TButton *Button1;
         TButton *Button2;
+        TButton *butResultOfRuns;
         void __fastcall SpeedButton4Click(TObject *Sender);
         void __fastcall Button1Click(TObject *Sender);
         void __fastcall Button2Click(TObject *Sender);
+        void __fastcall butResultOfRunsClick(TObject *Sender);
 private:	// User declarations
         Report *cond;
 public:		// User declarations
