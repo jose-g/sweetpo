@@ -235,9 +235,12 @@ bool Simulation::simulate()
   double XdWtot=0.0;
   double XdWtb=0.0;
   double XdWtbf=0.0;
-
+  double borrar;
   for(int i=0;i<totaldays;i++)
   {
+    XdWtot=0.0;
+    XdWtb=0.0;
+    XdWtbf=0.0;
     for(int irep=0;irep<numrep;irep++)
     {
         XdWtot=XdWtot+dWtot_mat[irep][i];
@@ -268,6 +271,8 @@ bool Simulation::simulate()
   fclose(stream1);
   fclose(stream2);
   fclose(stream3);
+// limite de confianza
+  CalculatesAfterSimulation(DMCont);
 // se contabiliza un nuevo escenario
   NumberScenario++;
   return finished;
@@ -309,4 +314,89 @@ void Simulation::CleanVariables()
 {
   NumberScenario=0;
 }
+int Simulation::CalculatesAfterSimulation(double _DMCont)
+{
+// se promedia los resultados
+  double XdWtot[365];
+  double XdWtb[365];
+  double DMCont=_DMCont;
+
+  for(int i=0;i<365;i++)
+  {
+    XdWtot[i]=0.0;
+    XdWtb[i]=0.0;
+  }
+
+  for(int i=0;i<time->duration;i++)
+  {
+    for(int isim=0;isim<time->repetitions;isim++)
+    {
+      XdWtot[i]=XdWtot[i]+dWtot_mat[isim][i];
+      XdWtb[i]=XdWtb[i]+dWtb_mat[isim][i];
+    }
+  }
+  double borrar;
+  for(int i=0;i<time->duration;i++)
+  {
+    borrar=XdWtot[i];
+    XdWtot[i]=XdWtot[i]/time->repetitions;
+    XdWtb[i]=XdWtb[i]/time->repetitions;
+  }
+// calculo de los limites de confianza solo para modelo 1 : Potential Growth
+  double* diffEstX=new double[time->repetitions];
+  double* diffEstXPow2=new double[time->repetitions];
+  double sumatoria;
+  double varianza;
+  double devstd;
+  double LC1_dWtot[365];
+  double LC2_dWtot[365];
+  double LC1_dWtb[365];
+  double LC2_dWtb[365];
+  // Limite de confianza para dWtot ("Total Dry Matter")
+  for(int iday=0;iday<time->duration;iday++)
+  {
+    sumatoria=0.0;
+    for(int irep=0;irep<time->repetitions;irep++)
+    {
+      diffEstX[irep]=dWtot_mat[irep][iday]-XdWtot[iday];
+      diffEstXPow2[irep]=pow(diffEstX[irep],2);
+      sumatoria=sumatoria+diffEstXPow2[irep];
+    }
+    varianza=sumatoria/double(time->repetitions);
+    devstd=sqrt(varianza);
+
+    LC1_dWtot[iday]=XdWtot[iday]-(devstd/sqrt(time->repetitions));
+    LC2_dWtot[iday]=XdWtot[iday]+(devstd/sqrt(time->repetitions));
+  }
+
+  // Limite de confianza para dWtb ("Root Dry Matter")
+  for(int iday=0;iday<time->duration;iday++)
+  {
+    sumatoria=0.0;
+    for(int irep=0;irep<time->repetitions;irep++)
+    {
+      diffEstX[irep]=dWtb_mat[irep][iday]-XdWtb[iday];
+      diffEstXPow2[irep]=pow(diffEstX[irep],2);
+      sumatoria=sumatoria+diffEstXPow2[irep];
+    }
+    varianza=sumatoria/double(time->repetitions);
+    devstd=sqrt(varianza);
+
+    LC1_dWtb[iday]=XdWtb[iday]-(devstd/sqrt(time->repetitions));
+    LC2_dWtb[iday]=XdWtb[iday]+(devstd/sqrt(time->repetitions));
+  }
+  delete[] diffEstX;
+  delete[] diffEstXPow2;
+//
+  FILE *stream4=NULL;
+  stream4=fopen(report->Archivo4,"w");
+  rewind(stream4);
+  fprintf(stream4,"%f\n",float(DMCont));
+  for(int iday=0;iday<time->duration;iday++)
+  {
+    fprintf(stream4,"%f %f %f %f %f %f\n",float(LC1_dWtot[iday]),float(XdWtot[iday]),float(LC2_dWtot[iday]),float(LC1_dWtb[iday]),float(XdWtb[iday]),float(LC2_dWtb[iday]));
+  }
+  fclose(stream4);
+}
+//------------------------------------------------------------------------------
 #endif

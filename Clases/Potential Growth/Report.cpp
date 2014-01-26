@@ -11,6 +11,8 @@ Report::Report()
  Archivo2 = new char[255];
  Archivo3 = NULL;
  Archivo3 = new char[255];
+ Archivo4 = NULL;
+ Archivo4 = new char[255];
  DMProd   = NULL;
  DMProd   = new char[255];
  DMProdResume = NULL;
@@ -39,6 +41,11 @@ Report::~Report()
   delete [ ]Archivo3;
   Archivo3=NULL;
  }
+ if (Archivo4 != NULL)
+ {
+  delete [ ]Archivo4;
+  Archivo4=NULL;
+ }
  if (DMProd != NULL)
  {
   delete [ ]DMProd;
@@ -65,6 +72,7 @@ void Report::CleanVariables()
   strcpy(Archivo1,"");
   strcpy(Archivo2,"");
   strcpy(Archivo3,"");
+  strcpy(Archivo4,"");
   strcpy(DMProd,"");
   strcpy(DMProdResume,"");
   strcpy(RunsReport,"");
@@ -74,6 +82,7 @@ void Report::DeleteReports()
   DeleteFile(Archivo1);
   DeleteFile(Archivo2);
   DeleteFile(Archivo3);
+  DeleteFile(Archivo4);
   DeleteFile(DMProd);
   DeleteFile(DMProdResume);
   DeleteFile(RunsReport);

@@ -1,26 +1,26 @@
 object frmDMProd: TfrmDMProd
-  Left = 213
-  Top = 350
+  Left = 453
+  Top = 268
   BorderStyle = bsDialog
   Caption = 'Graph : Dry matter production'
-  ClientHeight = 460
-  ClientWidth = 738
+  ClientHeight = 566
+  ClientWidth = 908
   Color = 2561029
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -14
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
   OnShow = FormShow
-  PixelsPerInch = 96
-  TextHeight = 13
+  PixelsPerInch = 120
+  TextHeight = 16
   object tch1: TChart
-    Left = 8
-    Top = 41
-    Width = 721
-    Height = 408
+    Left = 10
+    Top = 50
+    Width = 887
+    Height = 503
     BottomWall.Color = 8454143
     Legend.Bevel = bvRaised
     Legend.CheckBoxes = True
@@ -32,6 +32,7 @@ object frmDMProd: TfrmDMProd
     Legend.Left = 562
     Legend.ResizeChart = False
     Legend.Top = 41
+    Legend.Visible = False
     MarginLeft = 1
     MarginRight = 25
     Title.Brush.Color = clWhite
@@ -49,14 +50,12 @@ object frmDMProd: TfrmDMProd
     BottomAxis.LabelStyle = talValue
     BottomAxis.Title.Caption = 'days'
     BottomAxis.Title.Font.Color = clLime
-    BottomAxis.Title.Font.Height = -13
     BottomAxis.Title.Font.Style = [fsBold]
     LeftAxis.Axis.Color = clWhite
     LeftAxis.LabelsFont.Color = clWhite
     LeftAxis.LabelsFont.Style = [fsBold]
     LeftAxis.Title.Caption = 'tn / ha'
     LeftAxis.Title.Font.Color = clLime
-    LeftAxis.Title.Font.Height = -13
     LeftAxis.Title.Font.Style = [fsBold]
     View3D = False
     Zoom.Animated = True
@@ -68,109 +67,109 @@ object frmDMProd: TfrmDMProd
       15
       24)
     object Label1: TLabel
-      Left = 554
-      Top = 200
-      Width = 49
-      Height = 13
+      Left = 682
+      Top = 246
+      Width = 60
+      Height = 16
       Caption = 'Last day'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
     end
     object Label2: TLabel
-      Left = 554
-      Top = 226
-      Width = 76
-      Height = 13
+      Left = 682
+      Top = 278
+      Width = 96
+      Height = 16
       Caption = 'Total dry matter '
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
     end
     object Label4: TLabel
-      Left = 689
-      Top = 226
-      Width = 26
-      Height = 13
+      Left = 848
+      Top = 278
+      Width = 28
+      Height = 16
       Caption = 't / ha'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
     end
     object Label5: TLabel
-      Left = 689
-      Top = 252
-      Width = 26
-      Height = 13
+      Left = 848
+      Top = 310
+      Width = 28
+      Height = 16
       Caption = 't / ha'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
     end
     object Label3: TLabel
-      Left = 554
-      Top = 252
-      Width = 75
-      Height = 13
+      Left = 682
+      Top = 310
+      Width = 94
+      Height = 16
       Caption = 'Root dry matter '
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
     end
     object Label6: TLabel
-      Left = 554
-      Top = 276
-      Width = 84
-      Height = 13
+      Left = 682
+      Top = 340
+      Width = 104
+      Height = 16
       Caption = 'Root fresh matter '
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
     end
     object Label7: TLabel
-      Left = 689
-      Top = 276
-      Width = 26
-      Height = 13
+      Left = 848
+      Top = 340
+      Width = 28
+      Height = 16
       Caption = 't / ha'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
     end
     object GroupBox1: TGroupBox
-      Left = 562
-      Top = 87
-      Width = 148
-      Height = 90
+      Left = 692
+      Top = 51
+      Width = 182
+      Height = 111
       Color = 3677447
       ParentColor = False
       TabOrder = 0
       object RichEdit7: TRichEdit
-        Left = 12
-        Top = 5
-        Width = 89
-        Height = 22
+        Left = 15
+        Top = 6
+        Width = 109
+        Height = 27
         TabStop = False
         Alignment = taCenter
         BiDiMode = bdLeftToRight
@@ -178,7 +177,7 @@ object frmDMProd: TfrmDMProd
         Color = clBlack
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clMaroon
-        Font.Height = -11
+        Font.Height = -15
         Font.Name = 'MS Sans Serif'
         Font.Style = [fsBold]
         ParentBiDiMode = False
@@ -187,17 +186,17 @@ object frmDMProd: TfrmDMProd
         TabOrder = 1
       end
       object RichEdit6: TRichEdit
-        Left = 8
+        Left = 10
         Top = 0
-        Width = 89
-        Height = 22
+        Width = 109
+        Height = 27
         TabStop = False
         Alignment = taCenter
         BiDiMode = bdLeftToRight
         Color = 12713983
         Font.Charset = DEFAULT_CHARSET
         Font.Color = 6369292
-        Font.Height = -11
+        Font.Height = -15
         Font.Name = 'MS Sans Serif'
         Font.Style = [fsBold]
         Lines.Strings = (
@@ -208,14 +207,14 @@ object frmDMProd: TfrmDMProd
         TabOrder = 0
       end
       object chbTotalDM: TCheckBox
-        Left = 8
-        Top = 40
-        Width = 113
-        Height = 17
+        Left = 10
+        Top = 49
+        Width = 139
+        Height = 21
         Caption = 'Total dry matter'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
-        Font.Height = -11
+        Font.Height = -15
         Font.Name = 'MS Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
@@ -223,14 +222,14 @@ object frmDMProd: TfrmDMProd
         OnClick = chbTotalDMClick
       end
       object chbTuberDM: TCheckBox
-        Left = 8
-        Top = 64
-        Width = 118
-        Height = 17
+        Left = 10
+        Top = 79
+        Width = 145
+        Height = 21
         Caption = 'Root dry matter'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
-        Font.Height = -11
+        Font.Height = -15
         Font.Name = 'MS Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
@@ -239,37 +238,37 @@ object frmDMProd: TfrmDMProd
       end
     end
     object Edit1: TEdit
-      Left = 644
-      Top = 197
-      Width = 41
-      Height = 21
+      Left = 793
+      Top = 242
+      Width = 50
+      Height = 24
       TabStop = False
       ReadOnly = True
       TabOrder = 1
     end
     object Edit2: TEdit
-      Left = 644
-      Top = 224
-      Width = 41
-      Height = 21
+      Left = 793
+      Top = 276
+      Width = 50
+      Height = 24
       TabStop = False
       ReadOnly = True
       TabOrder = 2
     end
     object Edit3: TEdit
-      Left = 644
-      Top = 250
-      Width = 41
-      Height = 21
+      Left = 793
+      Top = 308
+      Width = 50
+      Height = 24
       TabStop = False
       ReadOnly = True
       TabOrder = 3
     end
     object Edit4: TEdit
-      Left = 644
-      Top = 276
-      Width = 41
-      Height = 21
+      Left = 793
+      Top = 340
+      Width = 50
+      Height = 24
       TabStop = False
       ReadOnly = True
       TabOrder = 4
@@ -312,24 +311,80 @@ object frmDMProd: TfrmDMProd
       YValues.Name = 'Y'
       YValues.Order = loNone
     end
+    object Series3: TLineSeries
+      Marks.Callout.Brush.Color = clBlack
+      Marks.Visible = False
+      SeriesColor = clWhite
+      Title = 'LC1'
+      LinePen.Style = psDot
+      Pointer.InflateMargins = True
+      Pointer.Style = psRectangle
+      Pointer.Visible = False
+      XValues.Name = 'X'
+      XValues.Order = loAscending
+      YValues.Name = 'Y'
+      YValues.Order = loNone
+    end
+    object Series4: TLineSeries
+      Marks.Callout.Brush.Color = clBlack
+      Marks.Visible = False
+      SeriesColor = clLime
+      Title = 'LC2'
+      LinePen.Style = psDot
+      Pointer.InflateMargins = True
+      Pointer.Style = psRectangle
+      Pointer.Visible = False
+      XValues.Name = 'X'
+      XValues.Order = loAscending
+      YValues.Name = 'Y'
+      YValues.Order = loNone
+    end
+    object Series6: TLineSeries
+      Marks.Callout.Brush.Color = clBlack
+      Marks.Visible = False
+      SeriesColor = clWhite
+      Title = 'LC1'
+      LinePen.Style = psDot
+      Pointer.InflateMargins = True
+      Pointer.Style = psRectangle
+      Pointer.Visible = False
+      XValues.Name = 'X'
+      XValues.Order = loAscending
+      YValues.Name = 'Y'
+      YValues.Order = loNone
+    end
+    object Series5: TLineSeries
+      Marks.Callout.Brush.Color = clBlack
+      Marks.Visible = False
+      SeriesColor = clLime
+      Title = 'LC2'
+      LinePen.Style = psDot
+      Pointer.InflateMargins = True
+      Pointer.Style = psRectangle
+      Pointer.Visible = False
+      XValues.Name = 'X'
+      XValues.Order = loAscending
+      YValues.Name = 'Y'
+      YValues.Order = loNone
+    end
   end
   object GroupBox2: TGroupBox
-    Left = 640
-    Top = 360
-    Width = 78
-    Height = 75
+    Left = 788
+    Top = 443
+    Width = 96
+    Height = 92
     Caption = 'GroupBox2'
     Color = 6369292
     ParentColor = False
     TabOrder = 0
     object SpeedButton4: TSpeedButton
-      Left = 22
-      Top = 30
-      Width = 35
-      Height = 35
+      Left = 27
+      Top = 37
+      Width = 43
+      Height = 43
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clRed
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Glyph.Data = {
@@ -350,10 +405,10 @@ object frmDMProd: TfrmDMProd
       OnClick = SpeedButton4Click
     end
     object RichEdit2: TRichEdit
-      Left = 12
-      Top = 5
-      Width = 57
-      Height = 22
+      Left = 15
+      Top = 6
+      Width = 70
+      Height = 27
       TabStop = False
       Alignment = taCenter
       BiDiMode = bdLeftToRight
@@ -361,7 +416,7 @@ object frmDMProd: TfrmDMProd
       Color = clBlack
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clMaroon
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentBiDiMode = False
@@ -370,17 +425,17 @@ object frmDMProd: TfrmDMProd
       TabOrder = 1
     end
     object RichEdit1: TRichEdit
-      Left = 8
+      Left = 10
       Top = 0
-      Width = 57
-      Height = 22
+      Width = 70
+      Height = 27
       TabStop = False
       Alignment = taCenter
       BiDiMode = bdLeftToRight
       Color = 12713983
       Font.Charset = DEFAULT_CHARSET
       Font.Color = 6369292
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       Lines.Strings = (
@@ -392,10 +447,10 @@ object frmDMProd: TfrmDMProd
     end
   end
   object tc1: TTeeCommander
-    Left = 8
-    Top = 8
-    Width = 721
-    Height = 33
+    Left = 10
+    Top = 10
+    Width = 887
+    Height = 40
     Panel = tch1
     Color = 9586706
     ParentShowHint = False

@@ -85,7 +85,7 @@ private:	// User declarations
         ManageDataPotato *cond;
         void ModificarStatusBar(AnsiString);
         void SelectReports();
-        AnsiString archivo1,archivo2,archivo3,DMProd,DMProdResume,RunsReport;
+        AnsiString archivo1,archivo2,archivo3,archivo4,DMProd,DMProdResume,RunsReport;
         AnsiString WorkDir;
 public:		// User declarations
         __fastcall TfrmMain(TComponent* Owner);

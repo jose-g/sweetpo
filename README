@@ -1,3 +1,42 @@
+Sabado 25/enero/2014  Cuarto commit
+version 1.0.3
+Se calculo limites de confianza para las variables Total Dry Matter y Root Dry Matter
+
+Cambios:
+
+Simulation.cpp : Se guardo en un archivo texto los datos asignados en las variables dWtot, dWtb y dWtbf correspondiente al último dia de la simulación.
+
+* Report.h : 
+    -  se definio la variable char Archivo4 en la clase Report
+
+* Report.cpp :
+
+    -  se instancio el objeto Archivo4 en el metodo constructor Report()
+    -  Se elimino el objeto Archivo4 en el metodo destructor ~Report()
+    -  Se limpia el contenido del objeto char Archivo4 en el metodo CleanVariables
+    -  Se elimina el archivo fisicamente del disco duro referenciado en el objeto Archivo4
+
+* UMain.h :
+
+    -  Se declaro la variable archivo4 del tipo AnsiString
+
+* UMain.cpp :
+
+    -  Se modifico el metodo SelectReports, se asigno la ruta de un archivo reporte a la variable archivo4.
+    -  Se modifico el metodo SelectReports, se asigno la variable local archivo4 al objeto Archivo4 de la clase report
+
+* Simulation.h :
+
+    -  Se declaro el metodo CalculatesAfterSimulation.
+
+* Simulation.cpp :
+
+    -  Se agrego el metodo CalculatesAfterSimulation en el cual se calcula los limites de confianza para las variables Total Dry Matter y Root Dry Matter, los datos se guardan en el archivo que se hace referencia en el objeto Archivo4 de la clase report.
+
+* UDMProd.cpp :
+
+    -  Se modifico la grafica, se agrego 4 nuevas series, se muestra los limites de confianza para las variables Total Dry Matter y Root Dry Matter. 
+
 Viernes 24/enero/2014  Tercer commit
 version 1.0.2
 Se implemento el reporte basado en texto de las repeticiones por cada escenario simulado, los datos corresponden a las variables Total Dry Matter, Tuber Dry Matter y Tuber Fresh Matter.
@@ -36,7 +75,7 @@ Simulation.cpp : Se guardo en un archivo texto los datos asignados en las variab
     -  Se modifico el metodo SelectReports, se asigno la ruta de un archivo reporte a la variable archivo3.
     -  Se modifico el metodo SelectReports, se asigno la variable local archivo3 al objeto archivo3 de la clase report
     -  Se modifico el metodo SelectReports, se asigno la ruta de un archivo reporte a la variable RunsReport.
-    -  Se modifico el metodo SelectReports, se asigno la variable local RunsReport al objeto archivo3 de la clase report
+    -  Se modifico el metodo SelectReports, se asigno la variable local RunsReport al objeto RunsReport de la clase report
     -  Se agrego item "Result of runs" al menu Reports en el formulario frmMain
     -  Se implemento metodo Resultofruns1Click
 

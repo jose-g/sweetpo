@@ -12,6 +12,7 @@ namespace modeling
      char* Archivo1;
      char* Archivo2;
      char* Archivo3;
+     char* Archivo4;
      char* DMProd;
      char* DMProdResume;
      char* RunsReport;
