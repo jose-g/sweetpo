@@ -1,3 +1,11 @@
+Sabado 25/enero/2014  Quinto commit
+version 1.0.4
+Se agrego funcion grabar en el formulario frmReportTXT
+
+* UReportTXT.cpp :
+
+    -  Se agrego boton "Save" en el formulario frmReportTXT, funcion guardar el reporte basado en texto
+
 Sabado 25/enero/2014  Cuarto commit
 version 1.0.3
 Se calculo limites de confianza para las variables Total Dry Matter y Root Dry Matter

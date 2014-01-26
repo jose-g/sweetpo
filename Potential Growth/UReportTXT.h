@@ -9,6 +9,7 @@
 #include <Forms.hpp>
 #include <Buttons.hpp>
 #include <ComCtrls.hpp>
+#include <Dialogs.hpp>
 //---------------------------------------------------------------------------
 class TfrmReportTXT : public TForm
 {
@@ -18,9 +19,15 @@ __published:	// IDE-managed Components
         TRichEdit *RichEdit2;
         TRichEdit *RichEdit1;
         TMemo *memReport;
+        TGroupBox *GroupBox3;
+        TSpeedButton *sbSave;
+        TRichEdit *RichEdit3;
+        TRichEdit *RichEdit4;
+        TSaveDialog *SaveDialog1;
         void __fastcall SpeedButton4Click(TObject *Sender);
         void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
         void __fastcall FormShow(TObject *Sender);
+        void __fastcall sbSaveClick(TObject *Sender);
 private:	// User declarations
         char* filename;
 public:		// User declarations

@@ -33,3 +33,14 @@ void __fastcall TfrmReportTXT::FormShow(TObject *Sender)
   memReport->Lines->LoadFromFile(filename);
 }
 //---------------------------------------------------------------------------
+void __fastcall TfrmReportTXT::sbSaveClick(TObject *Sender)
+{
+if(SaveDialog1->Execute())
+{
+  AnsiString destino=SaveDialog1->FileName;
+  CopyFile(filename,destino.c_str(),true);
+}
+
+}
+//---------------------------------------------------------------------------
+
