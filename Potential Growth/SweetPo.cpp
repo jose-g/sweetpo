@@ -11,8 +11,10 @@ USEFORM("UAbout.cpp", frmAbout);
 USEFORM("UClimate.cpp", frmClimate);
 USEFORM("UMain.cpp", frmMain);
 USEFORM("UCropParameter.cpp", frmCropParameter);
-USEFORM("UDMProd.cpp", frmDMProd);
+USEFORM("UCCGraph.cpp", frmCCGraph);
 USEFORM("UPresentation.cpp", frmPresentation);
+USEFORM("UReportGraphMenuPG.cpp", frmReportGraphMenuPG);
+USEFORM("UDMProd.cpp", frmDMProd);
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {

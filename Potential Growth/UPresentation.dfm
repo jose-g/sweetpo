@@ -4,7 +4,7 @@ object frmPresentation: TfrmPresentation
   Width = 437
   Height = 527
   BorderIcons = [biHelp]
-  Caption = 'SweetPo v1.0.4'
+  Caption = 'SweetPo v1.0.5'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

@@ -11,8 +11,8 @@ Simulation::~Simulation()
 }
 bool Simulation::simulate()
 {
+  randomize();
   bool finished;
-
 // inicialización de variables independientes
   double N      = crop->plant->N;
   double fcl    = crop->plant->fcl;
@@ -214,7 +214,7 @@ bool Simulation::simulate()
     dWtot_mat[irep][i-1]=dWtot;
     dWtb_mat[irep][i-1]=dWtb;
     dWtbf_mat[irep][i-1]=dWtbf;
-
+    dFlinti_mat[irep][i-1]=Flinti;
   }
   finished=true;
   } // fin de irep
@@ -235,7 +235,6 @@ bool Simulation::simulate()
   double XdWtot=0.0;
   double XdWtb=0.0;
   double XdWtbf=0.0;
-  double borrar;
   for(int i=0;i<totaldays;i++)
   {
     XdWtot=0.0;
@@ -300,7 +299,6 @@ double Simulation::Random()
   double ran=0.0;
   double Z0=0.0,Z1=0.0,Z2=0.0;
   begin:
-  Randomize;
   valor=random(50001);
   ran=double(valor)/50000.00;
   Z0=2*ran-1;
@@ -319,12 +317,14 @@ int Simulation::CalculatesAfterSimulation(double _DMCont)
 // se promedia los resultados
   double XdWtot[365];
   double XdWtb[365];
+  double XdFlinti[365];
   double DMCont=_DMCont;
 
   for(int i=0;i<365;i++)
   {
     XdWtot[i]=0.0;
     XdWtb[i]=0.0;
+    XdFlinti[i]=0.0;
   }
 
   for(int i=0;i<time->duration;i++)
@@ -333,14 +333,14 @@ int Simulation::CalculatesAfterSimulation(double _DMCont)
     {
       XdWtot[i]=XdWtot[i]+dWtot_mat[isim][i];
       XdWtb[i]=XdWtb[i]+dWtb_mat[isim][i];
+      XdFlinti[i]=XdFlinti[i]+dFlinti_mat[isim][i];
     }
   }
-  double borrar;
   for(int i=0;i<time->duration;i++)
   {
-    borrar=XdWtot[i];
     XdWtot[i]=XdWtot[i]/time->repetitions;
     XdWtb[i]=XdWtb[i]/time->repetitions;
+    XdFlinti[i]=XdFlinti[i]/time->repetitions;
   }
 // calculo de los limites de confianza solo para modelo 1 : Potential Growth
   double* diffEstX=new double[time->repetitions];
@@ -352,6 +352,8 @@ int Simulation::CalculatesAfterSimulation(double _DMCont)
   double LC2_dWtot[365];
   double LC1_dWtb[365];
   double LC2_dWtb[365];
+  double LC1_dFlinti[365];
+  double LC2_dFlinti[365];
   // Limite de confianza para dWtot ("Total Dry Matter")
   for(int iday=0;iday<time->duration;iday++)
   {
@@ -368,7 +370,6 @@ int Simulation::CalculatesAfterSimulation(double _DMCont)
     LC1_dWtot[iday]=XdWtot[iday]-(devstd/sqrt(time->repetitions));
     LC2_dWtot[iday]=XdWtot[iday]+(devstd/sqrt(time->repetitions));
   }
-
   // Limite de confianza para dWtb ("Root Dry Matter")
   for(int iday=0;iday<time->duration;iday++)
   {
@@ -385,6 +386,22 @@ int Simulation::CalculatesAfterSimulation(double _DMCont)
     LC1_dWtb[iday]=XdWtb[iday]-(devstd/sqrt(time->repetitions));
     LC2_dWtb[iday]=XdWtb[iday]+(devstd/sqrt(time->repetitions));
   }
+  // Limite de confianza para Flinti ("Canopy cover")
+  for(int iday=0;iday<time->duration;iday++)
+  {
+    sumatoria=0.0;
+    for(int irep=0;irep<time->repetitions;irep++)
+    {
+      diffEstX[irep]=dFlinti_mat[irep][iday]-XdFlinti[iday];
+      diffEstXPow2[irep]=pow(diffEstX[irep],2);
+      sumatoria=sumatoria+diffEstXPow2[irep];
+    }
+    varianza=sumatoria/double(time->repetitions);
+    devstd=sqrt(varianza);
+
+    LC1_dFlinti[iday]=XdFlinti[iday]-(devstd/sqrt(time->repetitions));
+    LC2_dFlinti[iday]=XdFlinti[iday]+(devstd/sqrt(time->repetitions));
+  }
   delete[] diffEstX;
   delete[] diffEstXPow2;
 //
@@ -394,9 +411,23 @@ int Simulation::CalculatesAfterSimulation(double _DMCont)
   fprintf(stream4,"%f\n",float(DMCont));
   for(int iday=0;iday<time->duration;iday++)
   {
-    fprintf(stream4,"%f %f %f %f %f %f\n",float(LC1_dWtot[iday]),float(XdWtot[iday]),float(LC2_dWtot[iday]),float(LC1_dWtb[iday]),float(XdWtb[iday]),float(LC2_dWtb[iday]));
+    fprintf(stream4,"%f %f %f %f %f %f %f %f %f\n",float(LC1_dWtot[iday]),float(XdWtot[iday]),float(LC2_dWtot[iday]),float(LC1_dWtb[iday]),float(XdWtb[iday]),float(LC2_dWtb[iday]),float(LC1_dFlinti[iday]),float(XdFlinti[iday]),float(LC2_dFlinti[iday]));
   }
   fclose(stream4);
+
+/*
+  FILE *stream5=NULL;
+  stream5=fopen("d:\\borrar.txt","w");
+  rewind(stream5);
+  for(int irep=0;irep<time->repetitions;irep++)
+  {
+    for(int iday=0;iday<time->duration;iday++)
+    {
+    fprintf(stream5,"%f\n",float(dFlinti_mat[irep][iday]));
+    }
+  }
+  fclose(stream5);
+*/
 }
 //------------------------------------------------------------------------------
 #endif

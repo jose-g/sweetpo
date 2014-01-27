@@ -6,16 +6,20 @@
     <PROJECT value="SweetPo.exe"/>
     <OBJFILES value="SweetPo.obj USimulationTime.obj UCampo.obj UReportTXT.obj 
       UReportTXTMenu.obj UAbout.obj UClimate.obj UMain.obj UCropParameter.obj 
-      UDMProd.obj UPresentation.obj 
-      &quot;..\Clases\Potential Growth\ManageDataPotato.obj&quot; &quot;..\Clases\Potential Growth\Simulation.obj&quot;"/>
+      UCCGraph.obj UPresentation.obj 
+      &quot;..\Clases\Potential Growth\ManageDataPotato.obj&quot; 
+      &quot;..\Clases\Potential Growth\Simulation.obj&quot; UReportGraphMenuPG.obj 
+      UDMProd.obj"/>
     <RESFILES value="SweetPo.res"/>
     <DEFFILE value=""/>
     <RESDEPEN value="$(RESFILES) USimulationTime.dfm UCampo.dfm UReportTXT.dfm 
       UReportTXTMenu.dfm UAbout.dfm UClimate.dfm UMain.dfm UCropParameter.dfm 
-      UDMProd.dfm UPresentation.dfm"/>
+      UCCGraph.dfm UPresentation.dfm UReportGraphMenuPG.dfm UDMProd.dfm"/>
     <LIBFILES value=""/>
-    <LIBRARIES value="TeePro7C6.lib vclx.lib TeeUI7C6.lib Tee7C6.lib rtl.lib vcl.lib"/>
-    <SPARELIBS value="vcl.lib rtl.lib Tee7C6.lib TeeUI7C6.lib vclx.lib TeePro7C6.lib"/>
+    <LIBRARIES value="bdertl.lib dbrtl.lib vcldb.lib vcldbx.lib TeePro7C6.lib vclx.lib 
+      TeeUI7C6.lib Tee7C6.lib rtl.lib vcl.lib"/>
+    <SPARELIBS value="vcl.lib rtl.lib Tee7C6.lib TeeUI7C6.lib vclx.lib TeePro7C6.lib vcldbx.lib 
+      vcldb.lib dbrtl.lib bdertl.lib"/>
     <PACKAGES value="vcl.bpi rtl.bpi vclx.bpi bcbsmp.bpi dbrtl.bpi adortl.bpi vcldb.bpi 
       qrpt.bpi bdertl.bpi vcldbx.bpi dsnap.bpi cds.bpi bdecds.bpi ibxpress.bpi 
       visualclx.bpi visualdbclx.bpi vclie.bpi xmlrtl.bpi inet.bpi inetdbbde.bpi 
@@ -30,7 +34,7 @@
     <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
     <RELEASELIBPATH value="$(BCB)\lib\release"/>
     <LINKER value="ilink32"/>
-    <USERDEFINES value="_DEBUG"/>
+    <USERDEFINES value=""/>
     <SYSDEFINES value="_RTLDLL;NO_STRICT"/>
     <MAINSOURCE value="SweetPo.cpp"/>
     <INCLUDEPATH value="&quot;..\Clases\Potential Growth&quot;;&quot;D:\TrabajoCIP\ProjCamote\Potential Growth&quot;;&quot;C:\Program Files (x86)\Steema Software\TeeChart 705 for Builder 6\Builder6\Include&quot;;$(BCB)\include;$(BCB)\include\vcl"/>
@@ -39,12 +43,11 @@
     <OTHERFILES value=""/>
   </MACROS>
   <OPTIONS>
-    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k -y -v -vi- -c 
-      -tW -tWM"/>
-    <PFLAGS value="-$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -a8 -b- -k- -vi -c -tW -tWM"/>
+    <PFLAGS value="-$Y- -$L- -$D- -$A8 -v -JPHNE -M"/>
     <RFLAGS value=""/>
-    <AFLAGS value="/mx /w2 /zi"/>
-    <LFLAGS value="-D&quot;&quot; -aa -Tpe -x -Gn -v"/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpe -x -Gn"/>
     <OTHERFILES value=""/>
   </OPTIONS>
   <LINKER>
@@ -64,10 +67,12 @@
       <FILE FILENAME="UClimate.cpp" FORMNAME="frmClimate" UNITNAME="UClimate" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UMain.cpp" FORMNAME="frmMain" UNITNAME="UMain" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UCropParameter.cpp" FORMNAME="frmCropParameter" UNITNAME="UCropParameter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="UDMProd.cpp" FORMNAME="frmDMProd" UNITNAME="UDMProd" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UCCGraph.cpp" FORMNAME="frmCCGraph" UNITNAME="UCCGraph" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UPresentation.cpp" FORMNAME="frmPresentation" UNITNAME="UPresentation" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\Clases\Potential Growth\ManageDataPotato.cpp" FORMNAME="" UNITNAME="ManageDataPotato" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\Clases\Potential Growth\Simulation.cpp" FORMNAME="" UNITNAME="Simulation" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UReportGraphMenuPG.cpp" FORMNAME="frmReportGraphMenuPG" UNITNAME="UReportGraphMenuPG" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UDMProd.cpp" FORMNAME="frmDMProd" UNITNAME="UDMProd" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>

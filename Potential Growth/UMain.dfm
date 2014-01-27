@@ -18288,6 +18288,10 @@ object frmMain: TfrmMain
           Caption = 'Dry matter production'
           OnClick = Drymatterproduction1Click
         end
+        object Canopycover1: TMenuItem
+          Caption = 'Canopy cover'
+          OnClick = Canopycover1Click
+        end
       end
       object N2: TMenuItem
         Caption = '-'

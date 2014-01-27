@@ -61,6 +61,7 @@ __published:	// IDE-managed Components
         TMenuItem *Drymatterproduction2;
         TMenuItem *Drymatterproductionresume1;
         TMenuItem *Resultofruns1;
+        TMenuItem *Canopycover1;
         void __fastcall Exit1Click(TObject *Sender);
         void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
         void __fastcall SpeedButton9Click(TObject *Sender);
@@ -80,6 +81,7 @@ __published:	// IDE-managed Components
         void __fastcall Aboutmodel1Click(TObject *Sender);
         void __fastcall FormCreate(TObject *Sender);
         void __fastcall Resultofruns1Click(TObject *Sender);
+        void __fastcall Canopycover1Click(TObject *Sender);
 private:	// User declarations
         AnsiString ArchivoDato;
         ManageDataPotato *cond;

@@ -13,6 +13,8 @@
 #include "UDMProd.h"
 #include "UAbout.h"
 #include "UPresentation.h"
+#include "UReportGraphMenuPG.h"
+#include "UCCGraph.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -184,19 +186,10 @@ void TfrmMain::SelectReports()
 //---------------------------------------------------------------------------
 void __fastcall TfrmMain::Drymatterproduction1Click(TObject *Sender)
 {
-  int existe=access(cond->report->Archivo4, 0);
-  if(existe==-1) // el archivo no existe
-  {
-    Application->MessageBox("There is not information to show!!!","Warning!",MB_OK);
-    return;
-  }
-  else
-  {
-    TfrmDMProd *frm = new TfrmDMProd(this);
-    frm->EnterInformation(cond->report->Archivo4);
-    frm->ShowModal();
-    delete frm;
-  }
+  TfrmReportGraphMenuPG *frm = new TfrmReportGraphMenuPG(this);
+  frm->EnterInformation(cond->report);
+  frm->ShowModal();
+  delete frm;
 }
 //---------------------------------------------------------------------------
 void __fastcall TfrmMain::Clearall1Click(TObject *Sender)
@@ -262,7 +255,6 @@ void __fastcall TfrmMain::FormCreate(TObject *Sender)
     delete frm;
 }
 //---------------------------------------------------------------------------
-
 void __fastcall TfrmMain::Resultofruns1Click(TObject *Sender)
 {
   int existe=access(cond->report->RunsReport, 0);
@@ -280,4 +272,20 @@ void __fastcall TfrmMain::Resultofruns1Click(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
-
+void __fastcall TfrmMain::Canopycover1Click(TObject *Sender)
+{
+  int existe=access(cond->report->Archivo4, 0);
+  if(existe==-1) // el archivo no existe
+  {
+    Application->MessageBox("There is not information to show!!!","Warning!",MB_OK);
+    return;
+  }
+  else
+  {
+    TfrmCCGraph *frm = new TfrmCCGraph(this);
+    frm->EnterInformation(cond->report->Archivo4);
+    frm->ShowModal();
+    delete frm;
+  }
+}
+//---------------------------------------------------------------------------

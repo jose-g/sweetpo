@@ -22,6 +22,7 @@ namespace modeling
      double dWtot_mat[100][365];
      double dWtb_mat[100][365];
      double dWtbf_mat[100][365];
+     double dFlinti_mat[100][365];
      int CalculatesAfterSimulation(double);
   };
 }
